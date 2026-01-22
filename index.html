@@ -15,15 +15,14 @@
     <link rel="canonical" href="https://lupustechnology.github.io/" />
     <link rel="icon" type="image/x-icon" href="logo.jpeg">
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8D51FPXEX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-R8D51FPXEX');
 </script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,26 +55,6 @@
     },
     "identifier": "0000-0002-3638-3467",
     "mainEntityOfPage": "https://orcid.org/0000-0002-3638-3467"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Research Domains",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cyber-Physical Systems Research"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Social Media Security Incident Detection"
-        }
-      }
-    ]
   }
 }
 </script>
@@ -86,7 +65,9 @@
         :root {
             --bg: #030712; 
             --surface: rgba(30, 41, 59, 0.4); 
-            --accent: #6366f1; 
+            --accent: #6366f1; /* Main Purple */
+            --cyan: #4ade80; /* Approximating the logo line color */
+            --logo-cyan: #56d9eb; /* Bright Cyan from your image line */
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
         }
@@ -103,144 +84,221 @@
             -ms-user-select: none;
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 80px 20px; }
+        .container { max-width: 950px; margin: 0 auto; padding: 60px 20px; }
 
+        /* RECREATING THE LOGO TEXT PATTERN */
         header { text-align: center; margin-bottom: 60px; }
-        h1 { font-size: 3.2rem; font-weight: 700; letter-spacing: -0.05em; margin: 0; background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { color: var(--text-dim); margin-top: 10px; font-weight: 300; font-size: 1.1rem; }
-        .udyam { font-size: 0.8rem; color: var(--accent); margin-top: 15px; font-family: monospace; letter-spacing: 1px; }
+        
+        .brand-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 10px;
+        }
 
-        .section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin: 50px 0 25px; display: flex; align-items: center; }
-        .section-title::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(to right, var(--accent), transparent); margin-left: 15px; }
+        .header-logo {
+            width: 130px; 
+            height: auto;
+            border-radius: 15px;
+            filter: drop-shadow(0 0 15px rgba(86, 217, 235, 0.2));
+        }
+
+        .brand-text-group {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .title-lupus {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .title-tech {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        .brand-line {
+            height: 2px;
+            background-color: var(--logo-cyan);
+            width: 100%;
+            margin: 4px 0 8px 0;
+            box-shadow: 0 0 8px var(--logo-cyan);
+        }
+
+        .brand-subtext {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--logo-cyan);
+            white-space: nowrap;
+        }
+
+        .tagline { color: var(--text-dim); margin-top: 25px; font-weight: 300; font-size: 1.1rem; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+        .udyam { font-size: 0.75rem; color: var(--text-dim); margin-top: 15px; font-family: monospace; opacity: 0.6; }
+
+        /* UI Elements */
+        .section-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent); margin: 60px 0 30px; display: flex; align-items: center; font-weight: 700; }
+        .section-title::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(to right, var(--accent), transparent); margin-left: 20px; }
 
         .card { 
             background: var(--surface); 
             backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255,255,255,0.08); 
-            padding: 25px; 
-            border-radius: 20px; 
-            margin-bottom: 20px; 
-            transition: all 0.3s ease; 
+            border: 1px solid rgba(255,255,255,0.06); 
+            padding: 30px; 
+            border-radius: 24px; 
+            margin-bottom: 24px; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
         }
-        .card:hover { border-color: var(--accent); transform: translateY(-3px); background: rgba(30, 41, 59, 0.6); }
+        .card:hover { border-color: var(--logo-cyan); transform: translateY(-5px); background: rgba(30, 41, 59, 0.6); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
 
-        .badge { display: inline-block; padding: 3px 10px; border-radius: 6px; background: rgba(99, 102, 241, 0.15); color: var(--accent); font-size: 0.7rem; font-weight: 600; margin-bottom: 12px; }
-        h3 { font-size: 1.25rem; margin: 0 0 10px 0; color: #fff; }
-        p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 15px 0; }
-        .meta { font-size: 0.8rem; font-family: monospace; color: var(--accent); opacity: 0.8; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 8px; background: rgba(86, 217, 235, 0.1); color: var(--logo-cyan); font-size: 0.65rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; }
+        h3 { font-size: 1.3rem; margin: 0 0 12px 0; color: #fff; line-height: 1.4; }
+        p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 18px 0; }
+        .meta { font-size: 0.75rem; font-family: monospace; color: var(--logo-cyan); opacity: 0.8; }
 
-        .id-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .id-item { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; text-align: center; }
-        .id-label { font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 5px; }
+        .id-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+        .id-item { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .id-label { font-size: 0.6rem; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 8px; letter-spacing: 0.1em; }
         .id-val { font-size: 0.85rem; font-family: monospace; color: #fff; }
 
-        .contact-footer { margin-top: 80px; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
-        .email-link { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; margin: 0 15px; transition: color 0.3s; }
-        .email-link:hover { color: #fff; }
+        .contact-footer { margin-top: 100px; padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .email-link { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; margin: 15px; display: inline-block; transition: all 0.3s; padding: 10px 20px; border-radius: 12px; background: rgba(255,255,255,0.03); }
+        .email-link:hover { color: #fff; background: rgba(255,255,255,0.08); transform: scale(1.05); }
 
-        footer { text-align: center; padding: 40px; color: #334155; font-size: 0.75rem; }
+        footer { text-align: center; padding: 50px; color: #334155; font-size: 0.75rem; letter-spacing: 0.05em; }
 
-        @media (max-width: 600px) { h1 { font-size: 2.2rem; } .id-grid { grid-template-columns: 1fr; } }
-        .id-val, .meta, .academic-text {
-            user-select: text !important;
-            -webkit-user-select: text !important;
-            -ms-user-select: text !important;
+        @media (max-width: 768px) { 
+            .brand-container { flex-direction: column; text-align: center; gap: 20px; }
+            .brand-text-group { text-align: center; align-items: center; }
+            .title-lupus { font-size: 2.2rem; }
+            .title-tech { font-size: 1.2rem; }
+            .brand-subtext { font-size: 0.65rem; }
         }
+
+        .id-val, .meta, .academic-text { user-select: text !important; -webkit-user-select: text !important; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>LUPUS TECHNOLOGY</h1>
+        <div class="brand-container">
+            <img src="logo.jpeg" alt="Lupus Technology Logo" class="header-logo">
+            
+            <div class="brand-text-group">
+                <div class="main-title-row">
+                    <span class="title-lupus">LUPUS</span>
+                    <span class="title-tech">TECHNOLOGY</span>
+                </div>
+                <div class="brand-line"></div>
+                <div class="brand-subtext">CYBERSECURITY RESEARCH & AI DEFENSE</div>
+            </div>
+        </div>
+        
         <p class="tagline">Advancing Cyber-Resilience: Specialized Research in Ransomware Mitigation, Intelligent Malware Detection, and Digital Forensic Research.</p>
         <div class="udyam">MSME REG: UDYAM-MP-31-0041732</div>
     </header>
 
     <div class="section-title">Lead Researcher</div>
-    <div class="card" style="border-left: 4px solid var(--accent);">
-        <h3 style="font-size: 1.5rem;">Er. Avdhesh Ghuraiya</h3>
+    <div class="card" style="border-left: 4px solid var(--logo-cyan);">
+        <h3 style="font-size: 1.6rem;">Er. Avdhesh Ghuraiya</h3>
         <span class="badge">Lead Researcher</span>
-        <p class="academic-text" style="color: var(--text-main); margin-bottom: 8px;">
+        <p class="academic-text" style="color: var(--text-main); margin-bottom: 10px;">
             <strong>PhD Candidate</strong><br>
             Moscow Institute of Physics and Technology (National Research University)<br>
             <span style="font-size: 0.85rem; color: var(--text-dim);">Moscow, Russian Federation</span>
         </p>
-        <p class="academic-text" style="border-top: 1px; color: var(--text-main); padding-top: 12px;">
-            <span style="color: var(--accent);">🏆</span> 
+        <p class="academic-text" style="border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-main); padding-top: 15px;">
+            <span style="color: var(--logo-cyan);">🏆</span> 
             <strong>M.S. in Cybersecurity</strong> (Gold Medallist | Red Diploma)<br>
             Moscow Institute of Physics and Technology (National Research University)<br>
             <span style="font-size: 0.85rem; color: var(--text-dim);">Moscow, Russian Federation</span>
         </p>
-        <p class="academic-entry" style="border-top: 1px; color: var(--text-main); padding-top: 10px;">
+        <p class="academic-text" style="border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-main); padding-top: 15px;">
            <strong>B.Tech in Computer Science and Engineering</strong><br>
            Amity University Madhya Pradesh <br>
            <span style="font-size: 0.85rem; color: var(--text-dim);">Gwalior, India</span>
+        </p>
     </div>
 
-   <div class="section-title">Researcher Identifiers</div>
-<div class="id-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-    <div class="id-item">
-        <span class="id-label">ORCID</span>
-        <span class="id-val">0000-0002-3638-3467 | 
-            <a href="https://orcid.org/0000-0002-3638-3467" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">View Profile ↗</a>
-        </span>
+    <div class="section-title">Researcher Identifiers</div>
+    <div class="id-grid">
+        <div class="id-item">
+            <span class="id-label">ORCID</span>
+            <span class="id-val">
+                <a href="https://orcid.org/0000-0002-3638-3467" target="_blank" style="color: var(--logo-cyan); text-decoration: none; font-weight: 600;">0000-0002-3638-3467 ↗</a>
+            </span>
+        </div>
+        <div class="id-item">
+            <span class="id-label">Scopus</span>
+            <span class="id-val">59664939200</span>
+        </div>
+        <div class="id-item">
+            <span class="id-label">ResearcherID</span>
+            <span class="id-val">PHK-0544-2026</span>
+        </div>
+        <div class="id-item">
+            <span class="id-label">Google Scholar</span>
+            <span class="id-val">
+                <a href="https://scholar.google.com/citations?hl=en&user=jNpCkfsAAAAJ" target="_blank" style="color: var(--logo-cyan); text-decoration: none; font-weight: 600;">View Profile ↗</a>
+            </span>
+        </div>
     </div>
-
-    <div class="id-item">
-        <span class="id-label">Scopus</span>
-        <span class="id-val">59664939200</span>
-    </div>
-
-    <div class="id-item">
-        <span class="id-label">ResearcherID</span>
-        <span class="id-val">PHK-0544-2026</span>
-    </div>
-    <div class="id-item">
-        <span class="id-label">Google Scholar</span>
-        <span class="id-val">
-            <a href="https://scholar.google.com/citations?hl=en&user=jNpCkfsAAAAJ" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">View Progile ↗</a>
-        </span>
-    </div>
-</div>
 
     <div class="section-title">Peer-Reviewed Publications</div>
     
     <div class="card">
-        <span class="badge">New Release</span>
+        <span class="badge">In Publishing</span>
         <h3>Ensemble models for social media security incident detection</h3>
-        <p>This Study investigates how two simple machine learning models, Support Vector Machines (SVM) and Multilayer Perceptrons (MLP), perform at detecting suspicious accounts on social media. </p>
-        <div class="meta">Status: In Publishing | High-tech technologies in space exploration of the Earth, Russia | K2 HAC Russia </div>
+        <p>Investigation of Support Vector Machines (SVM) and Multilayer Perceptrons (MLP) performance in detecting suspicious accounts on social media platforms.</p>
+        <div class="meta">Venue: High-tech technologies in space exploration of the Earth, Russia | K2 HAC Russia </div>
     </div>
 
     <div class="card">
         <span class="badge">Journal Paper</span>
         <h3>Comparative Bot Detection Random Forest versus XGBoost in Social Networks</h3>
-        <p>This study investigates the detection of automated accounts (bots) on social networks by comparing the behavior and performance of Random Forest and XGBoost classifiers under realistic, minimally tuned conditions. </p>
-        <div class="meta">Status: In Publishing | Synchroinfo Journal, Vienna</div>
+        <p>Comparative analysis of Random Forest and XGBoost classifiers for the detection of automated accounts under realistic operational conditions.</p>
+        <div class="meta">Venue: Synchroinfo Journal, Vienna</div>
     </div>
 
     <div class="card">
         <span class="badge">Conference Paper</span>
         <h3>IoT System architecture for a smart city</h3>
-        <p>Proposed architecture for resilient, large-scale municipal sensor networks.</p>
-        <div class="meta">Status: Oct 2024 | DOI: 10.1109/ICCT62929.2024.10874931</div>
+        <p>Proposed architectural framework for resilient, large-scale municipal sensor networks and data processing.</p>
+        <div class="meta">Oct 2024 | DOI: 10.1109/ICCT62929.2024.10874931</div>
     </div>
 
     <div class="section-title">Intellectual Property</div>
     <div class="card">
         <span class="badge">UK Design Patent</span>
         <h3>Environment monitoring computer with sensors for collecting and processing data</h3>
-        <p>Decentralized computational framework for high-integrity environmental sensing.</p>
-        <div class="meta">Grant Date: 06/03/2025 | UK IPO</div>
+        <p>Decentralized computational framework designed for high-integrity environmental sensing and real-time analysis.</p>
+        <div class="meta">Grant Date: 06/03/2025 | UK IPO | Design No: 6363065</div>
     </div>
 
     <div class="contact-footer">
-        <div class="section-title" style="margin-bottom: 20px;">Get in Touch</div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-            <div><small>General Inquiries</small><div class="email-link">info.lupustechnology@gmail.com</div></div>
-            <div><small>Research Data</small><div class="email-link">research.lupustechnology@gmail.com</div></div>
-            <div><small>Manuscript Relations</small><div class="email-link">lupustechnology.research@gmail.com</div></div>
+        <div class="section-title" style="margin-bottom: 20px; justify-content: center;">Contact Laboratory</div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <a href="mailto:info.lupustechnology@gmail.com" class="email-link"><small>General Inquiries</small><br>info.lupustechnology@gmail.com</a>
+            <a href="mailto:research.lupustechnology@gmail.com" class="email-link"><small>Research Data</small><br>research.lupustechnology@gmail.com</a>
+            <a href="mailto:lupustechnology.research@gmail.com" class="email-link"><small>Manuscript Relations</small><br>lupustechnology.research@gmail.com</a>
         </div>
     </div>
 
@@ -252,11 +310,7 @@
 <script>
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('keydown', function(e) {
-        if (
-            e.key === "F12" ||
-            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
-            (e.ctrlKey && (e.key === "U" || e.key === "S"))
-        ) {
+        if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) || (e.ctrlKey && (e.key === "U" || e.key === "S"))) {
             e.preventDefault();
             return false;
         }
