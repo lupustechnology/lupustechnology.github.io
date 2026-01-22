@@ -44,7 +44,6 @@
 
         .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 
-        /* COMPACT HEADER SCALING */
         header { text-align: center; margin-bottom: 50px; }
         
         .brand-container {
@@ -53,22 +52,22 @@
             justify-content: center;
             gap: 20px;
             margin-bottom: 10px;
-            flex-wrap: nowrap; /* Keeps logo and text on one line */
+            flex-wrap: nowrap;
         }
 
         .header-logo {
-            width: 80px; /* Reduced from 130px to prevent "screen-filling" */
+            width: 80px;
             height: auto;
             border-radius: 12px;
             filter: drop-shadow(0 0 10px rgba(86, 217, 235, 0.15));
-            flex-shrink: 0; /* Prevents logo from squishing */
+            flex-shrink: 0;
         }
 
         .brand-text-group {
             text-align: left;
             display: flex;
             flex-direction: column;
-            min-width: 0; /* Fixes overflow issues */
+            min-width: 0;
         }
 
         .main-title-row {
@@ -79,7 +78,7 @@
         }
 
         .title-lupus {
-            font-size: 2.2rem; /* Scaled down for better fit */
+            font-size: 2.2rem;
             font-weight: 800;
             letter-spacing: -0.02em;
             color: #ffffff;
@@ -114,7 +113,6 @@
         .tagline { color: var(--text-dim); margin-top: 20px; font-weight: 300; font-size: 1rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6; }
         .udyam { font-size: 0.7rem; color: var(--text-dim); margin-top: 12px; font-family: monospace; opacity: 0.5; }
 
-        /* UI Elements */
         .section-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin: 50px 0 25px; display: flex; align-items: center; font-weight: 700; }
         .section-title::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(to right, var(--accent), transparent); margin-left: 15px; }
 
@@ -129,10 +127,14 @@
         }
         .card:hover { border-color: var(--logo-cyan); transform: translateY(-3px); background: rgba(30, 41, 59, 0.6); }
 
+        .pub-item { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .pub-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
         .badge { display: inline-block; padding: 3px 10px; border-radius: 6px; background: rgba(86, 217, 235, 0.1); color: var(--logo-cyan); font-size: 0.65rem; font-weight: 700; margin-bottom: 12px; }
         h3 { font-size: 1.25rem; margin: 0 0 10px 0; color: #fff; }
         p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 15px 0; }
         .meta { font-size: 0.75rem; font-family: monospace; color: var(--logo-cyan); opacity: 0.8; }
+        .meta a { color: var(--logo-cyan); text-decoration: none; border-bottom: 1px dotted var(--logo-cyan); }
 
         .id-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
         .id-item { background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
@@ -190,11 +192,13 @@
         <p class="academic-text" style="border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-main); padding-top: 12px;">
             <span style="color: var(--logo-cyan);">🏆</span> 
             <strong>M.S. in Cybersecurity</strong> (Gold Medallist | Red Diploma)<br>
-            Moscow Institute of Physics and Technology (National Research University)
+            Moscow Institute of Physics and Technology (National Research University)<br>
+            <span style="font-size: 0.85rem; color: var(--text-dim);">Moscow, Russian Federation</span>
         </p>
         <p class="academic-text" style="border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-main); padding-top: 12px;">
            <strong>B.Tech in Computer Science and Engineering</strong><br>
-           Amity University Madhya Pradesh 
+           Amity University Madhya Pradesh<br>
+            <span style="font-size: 0.85rem; color: var(--text-dim);">Gwalior, India</span> 
         </p>
     </div>
 
@@ -223,35 +227,81 @@
     </div>
 
     <div class="section-title">Peer-Reviewed Publications</div>
-    
     <div class="card">
-        <span class="badge">In Publishing</span>
-        <h3>Ensemble models for social media security incident detection</h3>
-        <p>Investigating SVM and MLP performance in detecting suspicious social media accounts.</p>
-        <div class="meta">Venue: High-tech technologies in space exploration, Russia | K2 HAC </div>
+        <div class="pub-item">
+            <span class="badge">Final Draft</span>
+            <h3>Deep Learning Models Under Weak Social Signals</h3>
+            <p>Exploring the efficacy of neural architectures in identifying patterns within sparse or low-confidence social data streams.</p>
+            <div class="meta">Status: Research Archive 2026</div>
+        </div>
+        
+        <div class="pub-item">
+            <span class="badge">In-Review</span>
+            <h3>Ensemble models for social media security incident detection</h3>
+            <p>This study investigates how two simple machine learning models, Support Vector Machines (SVM) and Multilayer Perceptrons (MLP), perform at detecting suspicious accounts on social media.</p>
+            <div class="meta">Venue: High-Tech Technologies in Space Exploration, Russia | K2 HAC </div>
+        </div>
+
+        <div class="pub-item">
+            <span class="badge">In-Publishing</span>
+            <h3>Comparative Bot Detection Random Forest versus XGBoost in Social Networks</h3>
+            <p>This study investigates the detection of automated accounts (bots) on social networks by comparing the behavior and performance of Random Forest and XGBoost classifiers under realistic, minimally tuned conditions.</p>
+            <div class="meta">Venue: Synchroinfo Journal, Vienna, Austria</div>
+        </div>
     </div>
 
+    <div class="section-title">Conference Presentations</div>
     <div class="card">
-        <span class="badge">Journal Paper</span>
-        <h3>Comparative Bot Detection Random Forest vs XGBoost</h3>
-        <p>Analysis of classifier efficiency for bot detection under realistic network conditions.</p>
-        <div class="meta">Venue: Synchroinfo Journal, Vienna</div>
+        <div class="pub-item">
+            <span class="badge">Published</span>
+            <h3>IoT System architecture for a smart city</h3>
+            <p>This report reviews the latest research on smart factories and industrial data management.</p>
+            <div class="meta">
+                Venue: 2024 8th International Conference on Information, Control, and Communication Technologies (ICCT)<br>
+                Date: Oct 2024 | DOI: <a href="https://doi.org/10.1109/ICCT62929.2024.10874931" target="_blank">10.1109/ICCT62929.2024.10874931</a>
+            </div>
+        </div>
     </div>
 
     <div class="section-title">Intellectual Property</div>
     <div class="card">
-        <span class="badge">UK Design Patent</span>
-        <h3>Environment monitoring computer with sensors</h3>
-        <p>Computational framework for high-integrity environmental sensing.</p>
-        <div class="meta">Grant Date: 06/03/2025 | UK IPO</div>
+        <div class="pub-item">
+            <span class="badge">UK Design Patent</span>
+            <h3>Environment monitoring computer with sensors for collecting and processing data</h3>
+            <p>Computational framework for high-integrity environmental sensing and real-time data ingestion.</p>
+            <div class="meta">Reg No: 6428713 | Grant Date: 06/03/2025 | UK IPO</div>
+        </div>
     </div>
 
     <div class="contact-footer">
-        <div class="section-title" style="margin-bottom: 20px; justify-content: center;">Contact Laboratory</div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-            <a href="mailto:info.lupustechnology@gmail.com" class="email-link">info.lupustechnology@gmail.com</a>
-            <a href="mailto:research.lupustechnology@gmail.com" class="email-link">research.lupustechnology@gmail.com</a>
+       <div class="section-title" style="justify-content: center;">Contact Laboratory</div>
+    <div class="card" style="background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(99, 102, 241, 0.3); padding: 40px 20px;">
+        <div style="text-align: center; margin-bottom: 35px;">
+            <h3 style="font-size: 1.6rem; letter-spacing: -0.01em;">Global Research Inquiries</h3>
+            <p style="color: var(--text-dim); font-size: 0.95rem; max-width: 550px; margin: 0 auto;">
+                For collaboration proposals, data access requests, or editorial inquiries, please contact the relevant department below.
+            </p>
         </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 10px;">
+            
+            <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;" onmouseover="this.style.borderColor='var(--logo-cyan)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)'">
+                <span style="font-size: 0.65rem; color: var(--logo-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 8px;">General Inquiry</span>
+                <a href="mailto:info.lupustechnology@gmail.com" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-family: monospace;">info.lupustechnology@gmail.com</a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;" onmouseover="this.style.borderColor='var(--logo-cyan)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)'">
+                <span style="font-size: 0.65rem; color: var(--logo-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 8px;">Research Related</span>
+                <a href="mailto:research.lupustechnology@gmail.com" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-family: monospace;">research.lupustechnology@gmail.com</a>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;" onmouseover="this.style.borderColor='var(--logo-cyan)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.05)'">
+                <span style="font-size: 0.65rem; color: var(--logo-cyan); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 8px;">Manuscript Related</span>
+                <a href="mailto:lupustechnology.research@gmail.com" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-family: monospace;">lupustechnology.research@gmail.com</a>
+            </div>
+
+        </div>
+    </div>
     </div>
 
     <footer>
