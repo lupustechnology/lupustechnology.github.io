@@ -135,11 +135,14 @@
         p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 15px 0; }
         .meta { font-size: 0.75rem; font-family: monospace; color: var(--logo-cyan); opacity: 0.8; }
         .meta a { color: var(--logo-cyan); text-decoration: none; border-bottom: 1px dotted var(--logo-cyan); }
-
-        .id-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .research-row {display: flex; gap: 30px; align-items: stretch; margin: 40px 0;width: 100%;}
+        .column-left {flex: 3; display: flex;}
+        .column-right {flex: 1; display: flex; flex-direction: column; gap: 15px; min-width: 200px;}
+        .card-fix {background: var(--surface);backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06);
+                   border-left: 4px solid var(--logo-cyan);padding: 25px;border-radius: 20px;width: 100%;box-sizing: border-box;}
         .id-item { background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
-        .id-label { font-size: 0.55rem; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 5px; }
-        .id-val { font-size: 0.8rem; font-family: monospace; color: #fff; }
+        .id-label { font-size: 0.99rem; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 5px; }
+        .id-val { font-size: 0.75rem; font-family: monospace; color: #fff; }
 
         .contact-footer { margin-top: 80px; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
         .email-link { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; margin: 10px; display: inline-block; transition: all 0.3s; padding: 8px 15px; border-radius: 10px; background: rgba(255,255,255,0.03); }
@@ -154,6 +157,9 @@
             .title-tech { font-size: 1rem; }
             .brand-subtext { font-size: 0.6rem; letter-spacing: 0.05em; }
             .header-logo { width: 70px; }
+            .research-row {flex-direction: column;}
+            .column-right {flex-direction: column;}  
+            .column-left, .column-right {flex: none; width: 100%;}
         }
 
         .id-val, .meta, .academic-text { user-select: text !important; -webkit-user-select: text !important; }
@@ -177,75 +183,74 @@
         </div>
         
         <p class="tagline">Advancing Cyber-Resilience: Specialized Research in Ransomware Mitigation, Intelligent Malware Detection, and Digital Forensic Research.</p>
-        <div class="udyam">MSME REG: UDYAM-MP-31-0041732</div>
+        <div class="udyam">Registered in MSME and District Industeries Office</div>
     </header>
 
-    <div class="section-title">Lead Researcher</div>
-    <div class="card" style="border-left: 4px solid var(--logo-cyan);">
-        <h3 style="font-size: 1.4rem;">Er. Avdhesh Ghuraiya</h3>
-        <span class="badge">Lead Researcher</span>
-        <p class="academic-text" style="color: var(--text-main); margin-bottom: 8px;">
-            <strong>PhD Candidate</strong><br>
-            Moscow Institute of Physics and Technology (National Research University)<br>
-            <span style="font-size: 0.85rem; color: var(--text-dim);">Moscow, Russian Federation</span>
-        </p>
-        <p class="academic-text" style="border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-main); padding-top: 12px;">
-            <span style="color: var(--logo-cyan);">🏆</span> 
-            <strong>M.S. in Cybersecurity</strong> (Gold Medallist | Red Diploma)<br>
-            Moscow Institute of Physics and Technology (National Research University)<br>
-            <span style="font-size: 0.85rem; color: var(--text-dim);">Moscow, Russian Federation</span>
-        </p>
-        <p class="academic-text" style="border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-main); padding-top: 12px;">
-           <strong>B.Tech in Computer Science and Engineering</strong><br>
-           Amity University Madhya Pradesh<br>
-            <span style="font-size: 0.85rem; color: var(--text-dim);">Gwalior, India</span> 
-        </p>
+  <div class="research-row">
+    <div class="column-left">
+        <div style="width: 100%;">
+            <div class="section-title">Lead Researcher</div>
+            <div class="card-fix">
+                <h3 style="font-size: 1.4rem; margin-top: 0;">Avdhesh Ghuraiya</h3>
+                <span class="badge">Lead Researcher</span>
+                <p class="academic-text" style="color: var(--text-main); margin-top: 15px; margin-bottom: 8px;">
+                    <strong>Researcher</strong><br>
+                    Moscow Institute of Physics and Technology (National Research University)<br>
+                    <span style="font-size: 0.85rem; color: var(--text-dim);">Moscow, Russian Federation</span>
+                </p>
+                <p class="academic-text" style="border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-main); padding-top: 12px; margin-bottom: 0;">
+                    <span style="color: var(--logo-cyan);">🏆</span> 
+                    <strong>M.S. in Cybersecurity</strong> (Gold Medallist | Red Diploma)<br>
+                    Moscow Institute of Physics and Technology (National Research University)<br>
+                    <span style="font-size: 0.85rem; color: var(--text-dim);">Moscow, Russian Federation</span>
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="section-title">Researcher Identifiers</div>
-    <div class="id-grid">
-        <div class="id-item">
-            <span class="id-label">ORCID</span>
-            <span class="id-val">
-                <a href="https://orcid.org/0000-0002-3638-3467" target="_blank" style="color: var(--logo-cyan); text-decoration: none; font-weight: 600;">0000-0002-3638-3467 ↗</a>
-            </span>
-        </div>
-        <div class="id-item">
-            <span class="id-label">Scopus</span>
-            <span class="id-val">59664939200</span>
-        </div>
-        <div class="id-item">
-            <span class="id-label">ResearcherID</span>
-            <span class="id-val">PHK-0544-2026</span>
-        </div>
-        <div class="id-item">
-            <span class="id-label">Google Scholar</span>
-            <span class="id-val">
-                <a href="https://scholar.google.com/citations?hl=en&user=jNpCkfsAAAAJ" target="_blank" style="color: var(--logo-cyan); text-decoration: none; font-weight: 600;">View Profile ↗</a>
-            </span>
+    <div class="column-right">
+        <div style="height: 100%; display: flex; flex-direction: column;">
+            <div class="section-title">Researcher Identifiers</div>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px; flex-grow: 1;">
+                <div class="id-item" style="flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 80px;">
+                    <span class="id-label">ORCID</span>
+                    <span class="id-val">
+                        <a href="https://orcid.org/0000-0002-3638-3467" target="_blank" style="color: var(--logo-cyan); text-decoration: none; font-weight: 600;">View Profile ↗</a>
+                    </span>
+                </div>
+
+                <div class="id-item" style="flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 80px;">
+                    <span class="id-label">Google Scholar</span>
+                    <span class="id-val">
+                        <a href="https://scholar.google.com/citations?hl=en&user=jNpCkfsAAAAJ" target="_blank" style="color: var(--logo-cyan); text-decoration: none; font-weight: 600;">View Profile ↗</a>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
     <div class="section-title">Peer-Reviewed Publications</div>
     <div class="card">
         <div class="pub-item">
             <span class="badge">Final Draft</span>
-            <h3>Deep Learning Models Under Weak Social Signals</h3>
-            <p>Exploring the efficacy of neural architectures in identifying patterns within sparse or low-confidence social data streams.</p>
+            <h3>Title Hidden due to Privacy</h3>
+            <p><strong>The Investigation:</strong> Engineering resilient neural architectures capable of extracting high-fidelity security intelligence from "noisy" or sparse social metadata. This research identifies the threshold where deep learning maintains predictive accuracy despite degraded signal quality.</p>
             <div class="meta">Status: Research Archive 2026</div>
         </div>
         
         <div class="pub-item">
             <span class="badge">In-Review</span>
-            <h3>Ensemble models for social media security incident detection</h3>
-            <p>This study investigates how two simple machine learning models, Support Vector Machines (SVM) and Multilayer Perceptrons (MLP), perform at detecting suspicious accounts on social media.</p>
+            <h3>Title Hidden due to Privacy</h3>
+            <p><strong>The Investigation:</strong> Developing a hybrid defensive layer by fusing Support Vector Machines (SVM) and Multi-Layer Perceptrons (MLP). The research focuses on the "Detection Gap"—identifying sophisticated account takeover signatures that single-classifier systems typically overlook.</p>
             <div class="meta">Venue: High-Tech Technologies in Space Exploration, Russia | K2 HAC </div>
         </div>
 
         <div class="pub-item">
             <span class="badge">In-Publishing</span>
             <h3>Comparative Bot Detection Random Forest versus XGBoost in Social Networks</h3>
-            <p>This study investigates the detection of automated accounts (bots) on social networks by comparing the behavior and performance of Random Forest and XGBoost classifiers under realistic, minimally tuned conditions.</p>
+            <p><strong>The Investigation:</strong> A rigorous benchmarking of ensemble learning efficiency. We analyzed the trade-offs between computational latency and detection precision, specifically focusing on how gradient boosting handles adversarial perturbations in automated bot traffic.</p>
             <div class="meta">Venue: Synchroinfo Journal, Vienna, Austria</div>
         </div>
     </div>
@@ -255,7 +260,7 @@
         <div class="pub-item">
             <span class="badge">Published</span>
             <h3>IoT System architecture for a smart city</h3>
-            <p>This report reviews the latest research on smart factories and industrial data management.</p>
+            <p><strong>The Investigation:</strong> Proposing a decentralized, multi-layered framework for urban Cyber-Physical Systems. This work investigates the integration of edge computing nodes to mitigate bottleneck risks in mission-critical smart city infrastructure.</p>
             <div class="meta">
                 Venue: 2024 8th International Conference on Information, Control, and Communication Technologies (ICCT)<br>
                 Date: Oct 2024 | DOI: <a href="https://doi.org/10.1109/ICCT62929.2024.10874931" target="_blank">10.1109/ICCT62929.2024.10874931</a>
